@@ -1,0 +1,220 @@
+/* ============================================================
+   INVICTUS VENTURE — ARTICLE PAGE STYLES
+   Layers on top of tokens.css + site.css + pages.css
+   ============================================================ */
+
+.article-hero {
+  background: var(--invv-navy-900);
+  color: white;
+  padding: var(--space-9) 0 var(--space-8);
+}
+.article-hero__inner { max-width: 820px; }
+.article-hero__crumb {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--invv-gold-400);
+  margin-bottom: var(--space-5);
+}
+.article-hero__crumb a { color: rgba(255,255,255,0.6); }
+.article-hero__crumb a:hover { color: white; }
+.article-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: var(--space-5);
+}
+.article-hero__meta .tag {
+  color: var(--invv-gold-400);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.article-hero__meta .sep { color: rgba(255,255,255,0.3); }
+.article-hero__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-3xl);
+  line-height: 1.08;
+  letter-spacing: var(--tracking-tight);
+  color: white;
+}
+.article-hero__standfirst {
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  color: rgba(255,255,255,0.78);
+  margin-top: var(--space-5);
+  font-weight: 400;
+  max-width: 680px;
+}
+
+/* ---------- Cover image ---------- */
+.article-cover {
+  margin-top: calc(var(--space-8) * -1);
+  position: relative;
+  z-index: 2;
+}
+.article-cover .img-slot {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  border: 1px solid var(--invv-line);
+}
+
+/* ---------- Body ---------- */
+.article-body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-9) 0;
+}
+.article-body > * + * { margin-top: var(--space-5); }
+.article-body p {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: 1.78;
+  color: var(--invv-navy-700);
+}
+.article-body h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-xl);
+  line-height: 1.2;
+  letter-spacing: var(--tracking-snug);
+  color: var(--invv-navy-900);
+  margin-top: var(--space-8);
+}
+.article-body h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-lg);
+  line-height: 1.25;
+  color: var(--invv-navy-900);
+  margin-top: var(--space-7);
+}
+.article-body strong { color: var(--invv-navy-900); font-weight: 700; }
+.article-body ul, .article-body ol {
+  padding-left: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.article-body li {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: 1.7;
+  color: var(--invv-navy-700);
+}
+.article-body li::marker { color: var(--invv-gold-600); font-weight: 700; }
+
+.article-body blockquote {
+  margin: var(--space-7) 0;
+  padding: var(--space-5) var(--space-6);
+  border-left: 4px solid var(--invv-gold-500);
+  background: var(--invv-paper-2);
+}
+.article-body blockquote p {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-lg);
+  line-height: 1.4;
+  color: var(--invv-navy-900);
+}
+
+/* Pull / key-figure callout */
+.keyfig {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--invv-line);
+  border: 1px solid var(--invv-line);
+  margin: var(--space-7) 0;
+}
+.keyfig__cell {
+  background: white;
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.keyfig__num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-2xl);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--invv-navy-900);
+}
+.keyfig__num span { color: var(--invv-gold-600); }
+.keyfig__label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--invv-mute);
+}
+@media (max-width: 640px) {
+  .keyfig { grid-template-columns: 1fr; }
+}
+
+/* First-letter drop on opening para */
+.article-body > p:first-child::first-letter {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 0.78;
+  float: left;
+  margin: 6px 12px 0 0;
+  color: var(--invv-gold-600);
+}
+
+/* Disclaimer line */
+.article-note {
+  max-width: 720px;
+  margin: var(--space-7) auto 0;
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--invv-line);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--invv-mute);
+  font-style: italic;
+}
+
+/* Author / byline block */
+.article-byline {
+  max-width: 720px;
+  margin: var(--space-7) auto 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: var(--invv-paper-2);
+}
+.article-byline__avatar {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 54px;
+  background: var(--invv-navy-900);
+  color: var(--invv-gold-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-lg);
+}
+.article-byline__name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-base);
+  color: var(--invv-navy-900);
+}
+.article-byline__role {
+  font-size: 13px;
+  color: var(--invv-mute);
+  margin-top: 2px;
+}
+
+/* Related / next reads */
+.article-related { margin-top: var(--space-7); }
